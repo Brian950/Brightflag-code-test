@@ -22,7 +22,7 @@
 		<a class="navbar-brand" href="#">BF Code Test</a>
 	</nav>
 
-	<div ng-controller="studentCtrl" class="container">
+	<div id="studentTable" ng-controller="studentCtrl" class="container">
 
 		<table class="table">
 			<tr>
@@ -35,9 +35,23 @@
 				<td>{{student.studentID}}</td>
 				<td>{{student.firstName}}</td>
 				<td>{{student.lastName}}</td>
-				<td></td>
+				<td><div ng-repeat="subject in student.subjects">{{subject.subjectName}}</div></td>
 			</tr>
 		</table>
+	</div>
+	<!-- Enrollment Section -->
+	<div class="container">
+
+		<h4>Enrollment</h4>
+		<div ng-controller="enrollmentCtrl">
+			<label style="font-weight: bold;">Student: </label>
+				<select style="margin-right: 15px;" ng-options="student.studentID as '['+ student.studentID +'] ' + student.firstName + ' '
+				+ student.lastName for student in students track by student.studentID" ng-model="select.studentID"></select>
+			<label style="font-weight: bold;">Subject: </label>
+				<select style="margin-right: 15px;" ng-options="subject.subjectID as '['+ subject.subjectID +'] ' + subject.subjectName
+				for subject in subjects track by subject.subjectID" ng-model="select.subjectID"></select>
+			<input type="submit" ng-click="enroll(select)" value="Enroll" />
+		</div>
 
 	</div>
 

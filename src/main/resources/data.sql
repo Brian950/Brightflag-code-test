@@ -10,3 +10,6 @@ INSERT INTO subject VALUES(5, 'Databases');
 INSERT INTO faculty VALUES(1, 'Humanities');
 INSERT INTO faculty VALUES(2, 'Math');
 INSERT INTO faculty VALUES(3, 'Engineering');
+
+INSERT INTO enrollment VALUES(default, 1, 1); /* Enroll Mary in Math */
+INSERT INTO enrollment VALUES(default, 1, 2); /* Enroll Mary in Spanish */

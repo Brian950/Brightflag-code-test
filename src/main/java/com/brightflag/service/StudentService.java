@@ -2,6 +2,7 @@ package com.brightflag.service;
 
 import java.util.List;
 
+import com.brightflag.repository.SubjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,4 +19,5 @@ public class StudentService {
 		return studentRepository.getStudents();
 	}
 
+	public List<Student> getStudentsEnrolled(Integer subjectID){ return studentRepository.getStudentsEnrolled(subjectID); }
 }
